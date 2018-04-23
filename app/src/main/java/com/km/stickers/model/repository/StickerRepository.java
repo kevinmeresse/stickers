@@ -78,7 +78,7 @@ public class StickerRepository {
                 for (int i = 0; i < jsonTags.length(); i++) {
                     String tag = jsonTags.getString(i);
                     TrieNode currentNode = rootNode;
-                    String[] words = tag.trim().toLowerCase().split(" ");
+                    String[] words = StringUtils.split(tag.trim().toLowerCase(), " ");
                     for (int j = 0; j < words.length; j++) {
                         String word = words[j];
                         boolean isLastWord = (j == words.length - 1);
@@ -116,7 +116,7 @@ public class StickerRepository {
         Set<Sticker> result = new HashSet<>();
 
         // Split input into words
-        String[] words = input.trim().toLowerCase().split(" ");
+        String[] words = StringUtils.split(input.trim().toLowerCase(), " ,.");
 
         TrieNode previousNode = null;
         for (String word : words) {
