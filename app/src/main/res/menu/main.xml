@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_glide"
+        android:title="@string/use_glide"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_fresco"
+        android:title="@string/use_fresco"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_clear_cache"
+        android:title="@string/clear_cache"
+        app:showAsAction="never"/>
+
+</menu>

@@ -35,7 +35,7 @@
         app:layout_constraintBottom_toTopOf="@+id/text_field"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/black_divider"/>
+        android:background="@color/blackDivider"/>
 
     <EditText
         android:id="@+id/text_field"

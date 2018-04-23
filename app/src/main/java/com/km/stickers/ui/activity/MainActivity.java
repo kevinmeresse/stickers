@@ -7,10 +7,15 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipeline;
 import com.km.stickers.R;
 import com.km.stickers.ui.adapter.StickerAdapter;
 import com.km.stickers.ui.viewmodel.MainViewModel;
@@ -69,6 +74,28 @@ public class MainActivity extends AppCompatActivity {
         // Create new adapter
         adapter = new StickerAdapter();
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_glide:
+                if (adapter != null) adapter.setUseGlide(true);
+                return true;
+            case R.id.action_fresco:
+                if (adapter != null) adapter.setUseGlide(false);
+                return true;
+            case R.id.action_clear_cache:
+                if (viewModel != null) viewModel.clearCaches(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     /**
