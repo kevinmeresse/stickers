@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Stickers</string>
+    <string name="text_field_hint">Write something here…</string>
+</resources>
